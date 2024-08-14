@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PETFLIX</title>
+  <link rel="stylesheet" href="/estilos/style_telas.css">
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      const animal = [
+        {
+          codigo: 31,
+          nome: "Cachorro levando susto",
+          descricao: "Vídeo engraçado de cachorro se assustando",
+          foto: "./img/tartaruga.jpg",
+        },
+        {
+          codigo: 32,
+          nome: "Cachorro dando susto",
+          descricao: "Vídeo engraçado de cachorro se assustando",
+          foto: "./img/tartaruga.jpg",
+        },
+        {
+          codigo: 33,
+          nome: "Duplando cachorro",
+          descricao: "Vídeo engraçado de cachorro se assustando",
+          foto: "./img/tartaruga.jpg",
+        },
+        {
+          codigo: 34,
+          nome: "Cachorro levando susto 2.0",
+          descricao: "Vídeo engraçado de cachorro se assustando",
+          foto: "./img/tartaruga.jpg",
+        },        
+        {
+          codigo: 35,
+          nome: "Cachorro levando susto 2.0",
+          descricao: "Vídeo engraçado de cachorro se assustando",
+          foto: "./img/tartaruga.jpg",
+        },        
+        {
+          codigo: 36,
+          nome: "Cachorro levando susto 2.0",
+          descricao: "Vídeo engraçado de cachorro se assustando",
+          foto: "./img/tartaruga.jpg",
+        },
+      ];
+
+      function abrirPaginaSinopse(codigo) {
+        const animalEncontrado = animal.find(animal => animal.codigo === codigo);
+        
+        if (animalEncontrado) {
+          // Salva os dados do animal no localStorage
+          localStorage.setItem("animal", JSON.stringify(animalEncontrado));
+          // Abre a nova página
+          window.location.href = "sinopse.html";
+        }
+      }
+
+      // Adiciona o evento de clique às imagens
+      document.querySelectorAll('.imagem_animal').forEach(img => {
+        img.addEventListener('click', function() {
+          const codigo = Number(this.dataset.codigo);
+          abrirPaginaSinopse(codigo);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+    
+  <main>
+    <div id="tela">
+      <h1>PETFLIX</h1>
+      <div>
+        <div class="estiloBotao">
+            <button title="cachorro" class="bt_cabecalho">
+                <a href="cachorro.html "  class="estiloBotao">Cachorro</a>
+            </button>
+
+            <button title="gato" class="bt_cabecalho">
+                <a href="gato.html"  class="estiloBotao">Gato</a>
+            </button>
+
+            <button title="furao" class="bt_cabecalho">
+                <a href="furao.html" class="estiloBotao">Furão</a>
+            </button>
+
+            <button title="papagaio" class="bt_cabecalho">
+                <a href="papagaio.html" class="estiloBotao">Papaguaio</a>
+            </button>
+
+            <button title="panda" class="bt_cabecalho">
+                <a href="panda.html" class="estiloBotao">Panda</a>
+            </button>
+
+            <button title="tartaruga" class="bt_cabecalho">
+                <a href="tartaruga.html" class="estiloBotao">Tartaruga</a>
+            </button>
+        </div>
+    </div>
+      <div class="espaco_videos">
+        <!-- Imagens para selecionar animal -->
+        <img src="./img/tartaruga.jpg" class="imagem_animal" data-codigo="31" alt="Cachorro levando susto">
+        <img src="./img/tartaruga.jpg" class="imagem_animal" data-codigo="32" alt="Cachorro dando susto">
+        <img src="./img/tartaruga.jpg" class="imagem_animal" data-codigo="33" alt="Duplando cachorro 2">
+        <img src="./img/tartaruga.jpg" class="imagem_animal" data-codigo="34" alt="Duplando cachorro 3">
+        <img src="./img/tartaruga.jpg" class="imagem_animal" data-codigo="35" alt="Duplando cachorro 4">
+        <img src="./img/tartaruga.jpg" class="imagem_animal" data-codigo="36" alt="Cachorro levando susto 2.0">
+      </div>
+    </div>
+  </main>
+</body>
+</html>

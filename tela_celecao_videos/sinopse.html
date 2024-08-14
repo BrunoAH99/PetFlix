@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do animal</title>
+  <link rel="stylesheet" href="/estilos/tela_sinopse.css">
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Obtém os dados do animal do localStorage
+      const animal = JSON.parse(localStorage.getItem("animal"));
+
+      if (animal) {
+        document.getElementById("nome").textContent = animal.nome;
+        document.getElementById("descricao").textContent = animal.descricao;
+        document.getElementById("foto").setAttribute("src", animal.foto);
+      } else {
+        document.getElementById("nome").textContent = "animal não encontrado.";
+      }
+    });
+  </script>
+</head>
+<body>  
+  <main>    
+    <div id="infoAnimal">
+      <h1>PETFLIX</h1>
+      <p id="nome"></p>
+      <span id="descricao"></span>      
+    </div>
+    <div id="videos_animal">
+      <img id="foto" alt="Foto do animal" >
+    </div>
+  </main>
+</body>
+</html>
