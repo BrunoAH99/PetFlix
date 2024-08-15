@@ -13,7 +13,7 @@
       if (animal) {
         document.getElementById("nome").textContent = animal.nome;
         document.getElementById("descricao").textContent = animal.descricao;
-        document.getElementById("foto").setAttribute("src", animal.foto);
+        document.getElementById("video").setAttribute("src", animal.video);
       } else {
         document.getElementById("nome").textContent = "animal não encontrado.";
       }
@@ -28,7 +28,7 @@
       <span id="descricao"></span>      
     </div>
     <div id="videos_animal">
-      <img id="foto" alt="Foto do animal" >
+      <iframe id="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </main>
 </body>
